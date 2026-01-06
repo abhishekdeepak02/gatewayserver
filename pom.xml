@@ -10,8 +10,9 @@
 	</parent>
 	<groupId>com.lazybytes</groupId>
 	<artifactId>gatewayserver</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>3.0</version>
 	<name>gatewayserver</name>
+    <packaging>jar</packaging>
 	<description>service discovery service for lazy bank</description>
 	<url/>
 	<licenses>
@@ -79,10 +80,16 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <to>
+                        <image>${project.artifactId}:${project.version}</image>
+                    </to>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 
